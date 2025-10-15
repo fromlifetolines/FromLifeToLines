@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>生活線條 From Life to Lines｜設計洽談表 Design Intake Form</title>
+<style>
+  :root{
+    --bg:#0b0c0f;
+    --card:#151820;
+    --ink:#e9ecf1;
+    --muted:#9aa4b2;
+    --accent:#9fe870;
+    --line:#262b36;
+    --danger:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", Arial, sans-serif;}
+  a{color:var(--accent)}
+  .wrap{max-width:880px;margin:40px auto;padding:0 20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:28px}
+  h1{font-size:28px;margin:0 0 8px}
+  p.sub{color:var(--muted);margin:0 0 16px}
+  hr{border:none;border-top:1px solid var(--line);margin:24px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-1{display:grid;grid-template-columns:1fr;gap:16px}
+  label{display:block;font-weight:600;margin-bottom:6px}
+  .tip{font-size:13px;color:var(--muted);margin-top:6px}
+  input,select,textarea{width:100%;background:#0f1218;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;outline:none}
+  textarea{min-height:120px;resize:vertical}
+  .req::after{content:" *";color:var(--accent)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  button{background:var(--accent);color:#0a0a0a;border:none;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+  button.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .small{font-size:12px;color:var(--muted)}
+  .ok{color:#6ef3a3}
+  .err{color:var(--danger)}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr} }
+  @media print{
+    body{background:white;color:black}
+    .card{box-shadow:none;border-color:#ddd}
+    button,.small{display:none}
+    a{color:black}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>生活線條 From Life to Lines｜設計洽談表</h1>
+      <p class="sub">謝謝你的聯繫！請花 2–3 分鐘填寫。送出後我們會在 <b>1 個工作天</b> 內回覆檔期與流程。<br>
+      Thank you! We’ll reply within <b>1 business day</b> with timeline & a ballpark quote.</p>
+
+      <form id="fx">
+        <input type="hidden" name="timestamp" id="timestamp">
+        <hr>
+        <h3>一、聯絡資訊 Contact</h3>
+        <div class="grid">
+          <div>
+            <label class="req">聯絡人姓名 Name</label>
+            <input name="name" required placeholder="王小明 / Jane Doe">
+          </div>
+          <div>
+            <label class="req">Email</label>
+            <input type="email" name="email" required placeholder="name@example.com">
+          </div>
+          <div>
+            <label>LINE / WhatsApp</label>
+            <input name="im_handle" placeholder="@yourline / +886-...">
+          </div>
+          <div>
+            <label class="req">品牌或店名 Brand</label>
+            <input name="brand" required placeholder="例：山海咖啡 / Ocean & Hills Coffee">
+          </div>
+          <div>
+            <label class="req">產業 / 類別 Industry</label>
+            <select name="industry" required>
+              <option value="">請選擇 / Select…</option>
+              <option>餐飲 / F&B</option>
+              <option>咖啡 / 烘豆 Coffee/Roastery</option>
+              <option>手搖飲 Tea</option>
+              <option>旅宿 / 觀光 Hospitality/Tourism</option>
+              <option>零售 / 選物 Retail/Select Shop</option>
+              <option>健身 / 健康 Fitness/Wellness</option>
+              <option>美妝 / 沙龍 Beauty/Salon</option>
+              <option>教育 / 課程 Education/Course</option>
+              <option>科技 / SaaS Tech/SaaS</option>
+              <option>其他 / Other</option>
+            </select>
+            <div class="tip">品牌基本包＝一份簡短的品牌使用小手冊，教你正確使用 Logo、顏色、字體，讓之後的素材都能一致。</div>
+          </div>
+          <div>
+            <label>地區 Region</label>
+            <input name="region" placeholder="Taipei / Tokyo / Remote">
+          </div>
+        </div>
+
+        <hr>
+        <h3>二、需求與交付 Services & Deliverables</h3>
+        <div class="grid">
+          <div>
+            <label class="req">需要的服務（可複選） Services (multi-select)</label>
+            <select name="services" id="services" required multiple size="6">
+              <option>品牌基本包（Logo＋名片＋顏色字體小手冊）</option>
+              <option>社群成長套件（IG 九宮格模板／限動／Reels 封面）</option>
+              <option>開幕快衝物料（菜單／海報／立牌／橫幅）</option>
+              <option>行銷著陸頁快做包（活動/新品專用，一頁就能接單）</option>
+              <option>廣告素材組（靜態／輪播／各尺寸）</option>
+              <option>每月設計保養方案（固定產出海報／貼文，含小幅優化）</option>
+              <option>其他（請於備註說明）</option>
+</select>
+            <div class="tip">Windows：Ctrl+點選｜Mac：⌘+點選 以多選</div>
+          </div>
+          <div>
+            <label>參考連結或檔案 Refs</label>
+            <textarea name="refs" placeholder="Behance/官網/Drive 連結…"></textarea>
+          </div>
+          <div>
+            <label class="req">專案目標 Project Goal</label>
+            <select name="goal" required>
+              <option value="">請選擇 / Select…</option>
+              <option>提升到店與下單</option>
+              <option>建立品牌一致性</option>
+              <option>提升社群互動與追蹤</option>
+              <option>推廣新品/檔期活動</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div>
+            <label class="req">希望完成時間 Deadline</label>
+            <select name="deadline" required>
+              <option value="">請選擇 / Select…</option>
+              <option>7 天內</option>
+              <option>14 天</option>
+              <option>21–30 天</option>
+              <option>彈性，討論後決定</option>
+            </select>
+          </div>
+          <div>
+            <label class="req">預算區間 Budget Range</label>
+            <select name="budget" required>
+              <option value="">請選擇 / Select…</option>
+              <option>NT$10–20k</option>
+              <option>NT$20–40k</option>
+              <option>NT$40–80k</option>
+              <option>NT$80k+</option>
+              <option>其他貨幣（請備註）</option>
+            </select>
+          </div>
+          <div>
+            <label class="req">是否需開立發票 Invoice</label>
+            <select name="invoice" required>
+              <option value="">請選擇 / Select…</option>
+              <option>需要 / Yes</option>
+              <option>不需要 / No</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-1">
+          <div>
+            <label>其他備註 Notes</label>
+            <textarea name="notes" placeholder="補充任何需求或檔期資訊…"></textarea>
+          </div>
+        </div>
+
+        <hr>
+        <div class="actions">
+          <button type="button" id="submitToSheets">送出（寫入試算表）</button>
+          <button type="button" id="downloadJson">下載填寫內容（JSON）</button>
+          <button type="button" class="sec" onclick="window.print()">列印 / 存成 PDF</button>
+          <button type="reset" class="sec">清除表單</button>
+        </div>
+        <p class="small">提示：此 HTML 表單預設不會傳送到伺服器。請在下方 JS 設定你的 Apps Script Web App 網址 <code>WEB_APP_URL</code> 後再上傳使用。</p>
+        <p id="msg" class="small"></p>
+      </form>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const fx = document.getElementById('fx');
+  const ts = document.getElementById('timestamp');
+  ts.value = new Date().toISOString();
+
+  // ←← 把下面這行替換成你的 Google Apps Script Web App URL
+  const WEB_APP_URL = 'PASTE_YOUR_WEB_APP_URL_HERE';
+
+  function getFormData(){
+    const fd = new FormData(fx);
+    const services = Array.from(document.getElementById('services').selectedOptions).map(o=>o.value);
+    const data = Object.fromEntries(fd.entries());
+    data.services = services;
+    return data;
+  }
+
+  // Submit → Google Sheets
+  document.getElementById('submitToSheets').addEventListener('click', async () => {
+    if(!fx.reportValidity()){
+      setMsg("請先完成必填欄位 / Please complete required fields.", true);
+      return;
+    }
+    if (!WEB_APP_URL || WEB_APP_URL.includes('PASTE_YOUR_WEB_APP_URL_HERE')) {
+      setMsg("請先在程式碼中設定 WEB_APP_URL（你的 Apps Script Web App 連結）。", true);
+      return;
+    }
+    const data = getFormData();
+    try {
+      const res = await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors', // 若要讀取回傳，改為 'cors' 並讓 Apps Script 回 JSON
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      setMsg("已送出表單，稍後你會收到回覆（1 個工作天內）。", false);
+      fx.reset();
+      document.getElementById('timestamp').value = new Date().toISOString();
+    } catch (e) {
+      setMsg("送出失敗，請稍後再試或私訊 IG。", true);
+    }
+  });
+
+  // Download JSON（離線備份）
+  document.getElementById('downloadJson').addEventListener('click', () => {
+    if(!fx.reportValidity()){
+      setMsg("請先完成必填欄位 / Please complete required fields.", true);
+      return;
+    }
+    const data = getFormData();
+    const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+    const a = document.createElement('a');
+    const stamp = new Date().toISOString().replace(/[:.]/g,'-');
+    a.href = URL.createObjectURL(blob);
+    a.download = `fromlifetolines_intake_${stamp}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    setMsg("已下載 JSON；你也可按『列印』存成 PDF。", false);
+  });
+
+  function setMsg(text, isErr){
+    const el = document.getElementById('msg');
+    el.textContent = text;
+    el.className = "small " + (isErr ? "err" : "ok");
+  }
+})();
+</script>
+</body>
+</html>
