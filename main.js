@@ -1,7 +1,7 @@
 import './style.css';
 
 // TODO: Customer needs to fill this in
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwV1YXROc0d_ZFf_LLsq__DZ4XHB8QRLOf3VkMlkRpFfpFr6CCNNcfropNsthlVBI9O/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwHRoA77MkWjJ5KW-TRNmh4uCZLQOGXsvPqrZiQJya1LsIo1WABML6JD4CxkcqMpvCc/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('consultationForm');
