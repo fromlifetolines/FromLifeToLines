@@ -87,15 +87,32 @@
             <label for="services">需要的服務（可複選） Services (multi-select) <span class="required">*</span></label>
             <div class="multi-select-container">
               <!-- Using a custom multi-select UI or simple multiple select for now, let's stick to standard select multiple for simplicity but styled -->
-              <select id="services" name="services" multiple required class="modern-multi-select">
-                <option value="社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）">社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）</option>
-                <option value="開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）">開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）</option>
-                <option value="行銷著陸頁快做包（活動/新品專用，一頁就能接單）">行銷著陸頁快做包（活動/新品專用，一頁就能接單）</option>
-                <option value="廣告素材組（靜態 / 輪播 / 各尺寸）">廣告素材組（靜態 / 輪播 / 各尺寸）</option>
-                <option value="每月設計保養方案（固定產出海報 / 貼文，含小幅優化）">每月設計保養方案（固定產出海報 / 貼文，含小幅優化）</option>
-                <option value="其他（請於備註說明）">其他（請於備註說明）</option>
-              </select>
-              <p class="field-hint">Windows : Ctrl+點選 | Mac : ⌘+點選 以多選</p>
+              <div id="services" class="checkbox-group">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）">
+                  <span class="checkbox-label">社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）">
+                  <span class="checkbox-label">開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="行銷著陸頁快做包（活動/新品專用，一頁就能接單）">
+                  <span class="checkbox-label">行銷著陸頁快做包（活動/新品專用，一頁就能接單）</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="廣告素材組（靜態 / 輪播 / 各尺寸）">
+                  <span class="checkbox-label">廣告素材組（靜態 / 輪播 / 各尺寸）</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="每月設計保養方案（固定產出海報 / 貼文，含小幅優化）">
+                  <span class="checkbox-label">每月設計保養方案（固定產出海報 / 貼文，含小幅優化）</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="其他（請於備註說明）">
+                  <span class="checkbox-label">其他（請於備註說明）</span>
+                </label>
+              </div>
             </div>
           </div>
 

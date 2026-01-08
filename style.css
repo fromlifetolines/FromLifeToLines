@@ -243,34 +243,57 @@ textarea:focus {
   background: rgba(15, 23, 42, 0.8);
 }
 
-/* Custom Select styling to replace browser default arrow if needed, 
-   but simplistic approach: */
+/* Custom Select styling to replace browser default arrow if needed */
 .select-wrapper {
   position: relative;
 }
 
-/* Multi-select styling improvement */
-select[multiple] {
-  height: 220px;
+/* Checkbox Layout for Services */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   background: var(--input-bg);
-  padding: 8px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
 }
 
-select[multiple] option {
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 2px;
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
-select[multiple] option:checked {
-  background: var(--accent-color);
-  color: #fff;
-  /* white text for contrast on accent */
+.checkbox-item:hover {
+  background: rgba(255, 255, 255, 0.07);
 }
 
-select[multiple] option:hover {
-  background: rgba(255, 255, 255, 0.05);
+.checkbox-item:has(input:checked) {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--accent-color);
+}
+
+.checkbox-label {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  /* Reset default input styles for checkbox */
+  appearance: auto;
+  -webkit-appearance: auto;
+  accent-color: var(--accent-color);
 }
 
 .field-hint {

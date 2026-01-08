@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
-            // Handle multi-select 'services' specifically
-            const servicesSelect = document.getElementById('services');
-            const selectedServices = Array.from(servicesSelect.selectedOptions).map(option => option.value);
+            // Handle multi-select 'services'specifically (now checkboxes)
+            const servicesCheckboxes = document.querySelectorAll('input[name="services"]:checked');
+            const selectedServices = Array.from(servicesCheckboxes).map(cb => cb.value);
             data.services = selectedServices.join(', ');
 
             // Add Timestamp if desired by client, or let Server do it. Server side is better.
