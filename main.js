@@ -1,5 +1,5 @@
 // TODO: Customer needs to fill this in
-const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYW1N4UZVM1OxWsIqxvxhWryat_BB3AgxX1JLlshoDJ4wW97MKrSme-x4oMzimv6tt/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('consultationForm');
