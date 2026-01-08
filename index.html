@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>設計洽談表 | From Life to Lines 生活線條</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="background-globes">
+      <div class="globe globe-1"></div>
+      <div class="globe globe-2"></div>
+      <div class="globe globe-3"></div>
+    </div>
+    
+    <main class="container">
+      <header class="header">
+        <h1 class="brand-title">生活線條 From Life to Lines <span class="divider">|</span> <span class="form-title">設計洽談表</span></h1>
+        <p class="subtitle">謝謝你的聯繫！請花 2–3 分鐘填寫。送出後我們會在 <strong>1 個工作天</strong> 內回覆檔期與流程。<br>
+        Thank you! We’ll reply within <strong>1 business day</strong> with timeline & a ballpark quote.</p>
+      </header>
+      
+      <form id="consultationForm" class="glass-form">
+        <!-- Section 1: Contact -->
+        <section class="form-section">
+          <h2>一、聯絡資訊 Contact</h2>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">聯絡人姓名 Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="王小明 / Jane Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="line">LINE / WhatsApp</label>
+              <input type="text" id="line" name="line" placeholder="@yourline / +886-...">
+            </div>
+            
+            <div class="form-group">
+              <label for="brand">品牌或店名 Brand <span class="required">*</span></label>
+              <input type="text" id="brand" name="brand" placeholder="例：山海咖啡 / Ocean & Hills Coffee" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="industry">產業 / 類別 Industry <span class="required">*</span></label>
+              <div class="select-wrapper">
+                <select id="industry" name="industry" required>
+                  <option value="" disabled selected>請選擇 / Select...</option>
+                  <option value="餐飲 / F&B">餐飲 / F&B</option>
+                  <option value="科技 / SaaS Tech">科技 / SaaS Tech</option>
+                  <option value="教育 / 課程 Education">教育 / 課程 Education</option>
+                  <option value="健身 / 健康 Fitness">健身 / 健康 Fitness</option>
+                  <option value="手搖飲 Tea">手搖飲 Tea</option>
+                  <option value="其他 / Other">其他 / Other</option>
+                </select>
+              </div>
+              <p class="field-hint">品牌基本包 ＝ 一份簡短的品牌使用手冊，教你正確使用 Logo、顏色、字體，讓之後的素材都能一致。</p>
+            </div>
+            
+            <div class="form-group">
+              <label for="region">地區 Region</label>
+              <input type="text" id="region" name="region" placeholder="Taipei / Tokyo / Remote">
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Services & Deliverables -->
+        <section class="form-section">
+          <h2>二、需求與交付 Services & Deliverables</h2>
+          
+          <div class="form-grid-columns">
+             <div class="form-group full-height">
+              <label for="services">需要的服務（可複選） Services (multi-select) <span class="required">*</span></label>
+              <div class="multi-select-container">
+                 <!-- Using a custom multi-select UI or simple multiple select for now, let's stick to standard select multiple for simplicity but styled -->
+                 <select id="services" name="services" multiple required class="modern-multi-select">
+                    <option value="品牌基本包（Logo＋名片＋顏色字體小手冊）">品牌基本包（Logo＋名片＋顏色字體小手冊）</option>
+                    <option value="社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）">社群成長套件（IG 九宮格模板 / 限動 / Reels 封面）</option>
+                    <option value="開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）">開幕快衝物料（菜單 / 海報 / 立牌 / 橫幅）</option>
+                    <option value="行銷著陸頁快做包（活動/新品專用，一頁就能接單）">行銷著陸頁快做包（活動/新品專用，一頁就能接單）</option>
+                    <option value="廣告素材組（靜態 / 輪播 / 各尺寸）">廣告素材組（靜態 / 輪播 / 各尺寸）</option>
+                    <option value="每月設計保養方案（固定產出海報 / 貼文，含小幅優化）">每月設計保養方案（固定產出海報 / 貼文，含小幅優化）</option>
+                 </select>
+                 <p class="field-hint">Windows : Ctrl+點選 | Mac : ⌘+點選 以多選</p>
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <!-- Refs -->
+                 <label for="refs">參考連結或檔案 Refs</label>
+                 <textarea id="refs" name="refs" rows="6" placeholder="Behance/官網/Drive 連結..."></textarea>
+            </div>
+          </div>
+          
+           <div class="form-grid">
+               <div class="form-group">
+                  <label for="goal">專案目標 Project Goal <span class="required">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="goal" name="goal" required>
+                      <option value="" disabled selected>請選擇 / Select...</option>
+                      <option value="品牌從0到1建置">品牌從0到1建置</option>
+                      <option value="品牌重塑 / Rebranding">品牌重塑 / Rebranding</option>
+                      <option value="新品上市 / Campaign">新品上市 / Campaign</option>
+                      <option value="長期設計合作">長期設計合作</option>
+                    </select>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label for="deadline">希望完成時間 Deadline <span class="required">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="deadline" name="deadline" required>
+                      <option value="" disabled selected>請選擇 / Select...</option>
+                      <option value="1個月內 / within 1 month">1個月內 / within 1 month</option>
+                      <option value="1-2個月 / 1-2 months">1-2個月 / 1-2 months</option>
+                      <option value="3個月以上 / 3+ months">3個月以上 / 3+ months</option>
+                      <option value="不急 / Flexible">不急 / Flexible</option>
+                    </select>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label for="budget">預算區間 Budget Range <span class="required">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="budget" name="budget" required>
+                      <option value="" disabled selected>請選擇 / Select...</option>
+                      <option value="TWD 30k - 50k">TWD 30k - 50k</option>
+                      <option value="TWD 50k - 100k">TWD 50k - 100k</option>
+                      <option value="TWD 100k+">TWD 100k+</option>
+                      <option value="Not sure / 依報價決定">Not sure / 依報價決定</option>
+                    </select>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label for="invoice">是否需開立發票 Invoice <span class="required">*</span></label>
+                  <div class="select-wrapper">
+                    <select id="invoice" name="invoice" required>
+                      <option value="" disabled selected>請選擇 / Select...</option>
+                      <option value="需要 / Yes (+5% tax)">需要 / Yes (+5% tax)</option>
+                      <option value="不需要 / No">不需要 / No</option>
+                    </select>
+                  </div>
+               </div>
+           </div>
+           
+           <div class="form-group full-width">
+               <label for="notes">其他備註 Notes</label>
+               <textarea id="notes" name="notes" rows="4" placeholder="補充任何需求或檔期資訊..."></textarea>
+           </div>
+        </section>
+
+        <div class="form-actions">
+           <button type="submit" id="submitBtn" class="btn-submit">
+                <span class="btn-text">送出詢問 Submit Request</span>
+                <span class="btn-loader hidden"></span>
+           </button>
+        </div>
+      </form>
+    </main>
+
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <span id="toastKeywords">✔</span>
+            <span id="toastMessage">Submission Successful!</span>
+        </div>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
