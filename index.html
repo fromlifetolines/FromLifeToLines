@@ -29,6 +29,66 @@
         Thank you! We’ll reply within <strong>1 business day</strong> with timeline & a ballpark quote.</p>
     </header>
 
+    <!-- Pricing Section (CRO Redesign) -->
+    <section class="pricing-section">
+      <div class="pricing-header">
+        <h2>電商增長引擎方案</h2>
+        <p>為高端商業目標量身打造的專屬服務</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1: Lite -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3>基礎品牌啟動</h3>
+            <span class="plan-badge">Lite</span>
+          </div>
+          <div class="pricing-price">NT$ 30,000 <span>起</span></div>
+          <p class="pricing-target"><strong>目標：</strong>專為剛起步、需建立專業門面的品牌打造。</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> 基礎 LOGO 視覺定調</li>
+            <li><span class="check-icon">✓</span> 品牌色彩與字體規範</li>
+            <li><span class="check-icon">✓</span> 5 張高轉換社群/廣告 Banner</li>
+            <li><span class="check-icon">✓</span> <span class="feature-highlight">2 組精準提案 / 3 次微調</span></li>
+          </ul>
+        </div>
+
+        <!-- Plan 2: Pro (Highlighted) -->
+        <div class="pricing-card highlighted">
+          <div class="popular-tag">★ 主力推薦 ★</div>
+          <div class="pricing-card-header">
+            <h3>電商轉化優化</h3>
+            <span class="plan-badge pro">Pro</span>
+          </div>
+          <div class="pricing-price">NT$ 60,000 <span>起</span></div>
+          <p class="pricing-target"><strong>目標：</strong>專為有流量缺乏轉化率 (CVR)，急需突破瓶頸的電商設計。</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> <strong>包含 Lite 方案全部內容</strong></li>
+            <li><span class="check-icon">✓</span> 一頁式 Landing Page 視覺化文案</li>
+            <li><span class="check-icon">✓</span> Google 關鍵字廣告帳戶初期建置</li>
+            <li><span class="check-icon">✓</span> 轉換追蹤碼設定</li>
+          </ul>
+          <div class="pricing-value-prop">直接打通前端流量與後端訂單的行銷漏斗</div>
+        </div>
+
+        <!-- Plan 3: Enterprise -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3>年度品牌戰略</h3>
+            <span class="plan-badge enterprise">Enterprise</span>
+          </div>
+          <div class="pricing-price">NT$ 20,000 <span>/ 月 (年約)</span></div>
+          <p class="pricing-target"><strong>目標：</strong>針對追求長期穩健增長、建立市場護城河的成熟企業。</p>
+          <ul class="pricing-features">
+            <li><span class="check-icon">✓</span> 年度視覺顧問指導</li>
+            <li><span class="check-icon">✓</span> 廣告代操與視覺優化</li>
+            <li><span class="check-icon">✓</span> 每月競品與 ROI 數據分析報表</li>
+            <li><span class="check-icon">✓</span> <span class="feature-highlight">專屬外包行銷設計部</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <form id="consultationForm" class="glass-form">
       <!-- Section 1: Contact -->
       <section class="form-section">
@@ -118,8 +178,8 @@
 
           <div class="form-group">
             <!-- Refs -->
-            <label for="refs">參考連結或檔案 Refs</label>
-            <textarea id="refs" name="refs" rows="6" placeholder="Behance/官網/Drive 連結..."></textarea>
+            <label for="refs">參考連結或檔案 Refs <span class="required">*</span></label>
+            <textarea id="refs" name="refs" rows="6" placeholder="請填寫您的品牌網站、社群連結或相關參考資料..." required></textarea>
           </div>
         </div>
 
@@ -152,15 +212,13 @@
           </div>
 
           <div class="form-group">
-            <label for="budget">預算區間 Budget Range <span class="required">*</span></label>
+            <label for="budget">針對此次品牌升級，您的專案預算範圍大約是？ <span class="required">*</span></label>
             <div class="select-wrapper">
               <select id="budget" name="budget" required>
                 <option value="" disabled selected>請選擇 / Select...</option>
-                <option value="NT$10–20k">NT$10–20k</option>
-                <option value="NT$20–40k">NT$20–40k</option>
-                <option value="NT$40–80k">NT$40–80k</option>
-                <option value="NT$80k+">NT$80k+</option>
-                <option value="其他貨幣 （請備註）">其他貨幣 （請備註）</option>
+                <option value="3 萬 - 5 萬 (適合基礎視覺優化)">3 萬 - 5 萬 (適合基礎視覺優化)</option>
+                <option value="5 萬 - 10 萬 (適合完整視覺與初期流量建置)">5 萬 - 10 萬 (適合完整視覺與初期流量建置)</option>
+                <option value="10 萬以上 / 年度顧問 (適合深度戰略合作)">10 萬以上 / 年度顧問 (適合深度戰略合作)</option>
               </select>
             </div>
           </div>
@@ -185,7 +243,7 @@
 
       <div class="form-actions">
         <button type="submit" id="submitBtn" class="btn-submit">
-          <span class="btn-text">送出詢問 Submit Request</span>
+          <span class="btn-text">申請免費 15 分鐘品牌診斷</span>
           <span class="btn-loader hidden"></span>
         </button>
       </div>
