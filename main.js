@@ -1,9 +1,13 @@
 import './style.css';
+import { initI18n, getLocalizedString } from './i18n.js';
 
 // TODO: Customer needs to fill this in
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwHRoA77MkWjJ5KW-TRNmh4uCZLQOGXsvPqrZiQJya1LsIo1WABML6JD4CxkcqMpvCc/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize i18n
+    initI18n();
+
     const form = document.getElementById('consultationForm');
     const submitBtn = document.getElementById('submitBtn');
     const btnText = submitBtn.querySelector('.btn-text');
@@ -28,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Collect data
-            // For multi-select, we need to gather values manually
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
@@ -37,18 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedServices = Array.from(servicesCheckboxes).map(cb => cb.value);
             data.services = selectedServices.join(', ');
 
-            // Add Timestamp if desired by client, or let Server do it. Server side is better.
-
             // Send to Google Apps Script
-            // We use no-cors to avoid CORS errors from Google, but this means we can't read the response JSON standardly.
-            // However, Google Apps Script usually redirects or returns opaque response.
-            // A common workaround is to return JSONP or just assume success if no network error, 
-            // OR use a specific setup in GAS to allow CORS (ContentService.createTextOutput().setMimeType(ContentService.MimeType.JSON))
-
             const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 body: JSON.stringify(data),
-                mode: 'no-cors', // Important for simple GET/POST to GAS without complex CORS headers setup
+                mode: 'no-cors', 
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -56,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // With mode: 'no-cors', we get an opaque response. We can't check response.ok.
             // We assume generic success if it didn't throw.
-            showToast('表單已送出 / Form Submitted Successfully!', true);
+            showToast(getLocalizedString('toast_success'), true);
             form.reset();
 
         } catch (error) {
             console.error('Error:', error);
-            showToast('發生錯誤，請稍後再試 / Error occurred, please try again.', false);
+            showToast('Error occurred, please try again.', false);
         } finally {
             setLoading(false);
         }
@@ -70,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function setLoading(isLoading) {
         if (isLoading) {
             submitBtn.disabled = true;
-            btnText.textContent = 'Sending...';
+            btnText.textContent = getLocalizedString('btn_submitting');
             btnLoader.classList.remove('hidden');
         } else {
             submitBtn.disabled = false;
-            btnText.textContent = '送出詢問 Submit Request';
+            btnText.textContent = getLocalizedString('btn_submit');
             btnLoader.classList.add('hidden');
         }
     }
