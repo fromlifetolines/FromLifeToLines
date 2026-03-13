@@ -253,8 +253,8 @@ body {
 
 .pricing-card {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   padding: 32px 24px;
@@ -347,6 +347,36 @@ body {
   color: #c4b5fd;
 }
 
+/* Overrides for Highlighted Card to contrast with the bright blue gradient */
+.pricing-card.highlighted h3,
+.pricing-card.highlighted .pricing-target,
+.pricing-card.highlighted .pricing-target strong,
+.pricing-card.highlighted .pricing-features li,
+.pricing-card.highlighted .feature-highlight,
+.pricing-card.highlighted .pricing-price span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.highlighted .check-icon {
+  color: #e0f2fe !important;
+}
+
+.pricing-card.highlighted .plan-badge.pro {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.pricing-card.highlighted .pricing-value-prop {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+
 .pricing-price {
   font-family: var(--font-heading);
   font-size: 2rem;
@@ -413,8 +443,8 @@ body {
 /* Glass Form */
 .glass-form {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
   padding: 40px;
@@ -555,8 +585,8 @@ input[type="checkbox"] {
   height: 20px;
   margin-top: 2px;
   /* Reset default input styles for checkbox */
-  appearance: auto;
-  -webkit-appearance: auto;
+  -webkit-appearance: none;
+  appearance: none;
   accent-color: var(--accent-color);
 }
 
